@@ -1,0 +1,97 @@
+{
+  "info": {
+    "name": "go-k8s-service",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "order-service",
+      "item": [
+        {
+          "name": "health",
+          "request": {
+            "method": "GET",
+            "url": "http://localhost:8080/health"
+          }
+        },
+        {
+          "name": "create order",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"item\": \"pizza\",\n  \"quantity\": 2\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": "http://localhost:8080/orders"
+          }
+        },
+        {
+          "name": "list orders",
+          "request": {
+            "method": "GET",
+            "url": "http://localhost:8080/orders"
+          }
+        },
+        {
+          "name": "get order by id",
+          "request": {
+            "method": "GET",
+            "url": "http://localhost:8080/orders/1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "payment-service",
+      "item": [
+        {
+          "name": "health",
+          "request": {
+            "method": "GET",
+            "url": "http://localhost:8081/health"
+          }
+        },
+        {
+          "name": "create payment",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"order_id\": \"1\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": "http://localhost:8081/payments"
+          }
+        },
+        {
+          "name": "get payment by id",
+          "request": {
+            "method": "GET",
+            "url": "http://localhost:8081/payments/1"
+          }
+        }
+      ]
+    }
+  ]
+}
