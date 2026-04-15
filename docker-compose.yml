@@ -1,5 +1,6 @@
 services:
   order-service:
+    image: shrenikmehar/order-service:latest
     build:
       context: .
       dockerfile: order-service/Dockerfile
@@ -7,6 +8,7 @@ services:
       - "8080:8080"
 
   payment-service:
+    image: shrenikmehar/payment-service:latest
     build:
       context: .
       dockerfile: payment-service/Dockerfile
