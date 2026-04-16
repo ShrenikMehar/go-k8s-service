@@ -20,6 +20,8 @@ spec:
           envFrom:
             - configMapRef:
                 name: order-service-config
+            - secretRef:
+                name: order-service-secret
           livenessProbe:
             httpGet:
               path: /health

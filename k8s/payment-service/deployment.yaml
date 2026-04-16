@@ -20,6 +20,8 @@ spec:
           envFrom:
             - configMapRef:
                 name: payment-service-config
+            - secretRef:
+                name: payment-service-secret
           livenessProbe:
             httpGet:
               path: /health
