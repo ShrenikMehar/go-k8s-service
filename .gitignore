@@ -10,3 +10,6 @@ payment-service/payment-service
 
 # mac
 .DS_Store
+
+# helm secrets
+helm/**/values-secret.yaml
