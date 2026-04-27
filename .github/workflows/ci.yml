@@ -81,8 +81,8 @@ jobs:
           push: true
           platforms: linux/amd64,linux/arm64
           tags: ${{ steps.meta.outputs.tags }}
-          cache-from: type=gha
-          cache-to: type=gha,mode=max
+          cache-from: type=gha,scope=order-service
+          cache-to: type=gha,mode=max,scope=order-service
 
   build-and-push-payment-service:
     name: Build & Push payment-service
@@ -118,5 +118,5 @@ jobs:
           push: true
           platforms: linux/amd64,linux/arm64
           tags: ${{ steps.meta.outputs.tags }}
-          cache-from: type=gha
-          cache-to: type=gha,mode=max
+          cache-from: type=gha,scope=payment-service
+          cache-to: type=gha,mode=max,scope=payment-service
