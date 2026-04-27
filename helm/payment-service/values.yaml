@@ -1,0 +1,29 @@
+name: payment-service
+namespace: dev
+
+image:
+  repository: shrenikmehar/payment-service
+  tag: latest
+
+replicas: 1
+
+port:
+  container: 8081
+  service: 80
+
+resources:
+  requests:
+    cpu: 100m
+    memory: 64Mi
+  limits:
+    cpu: 200m
+    memory: 128Mi
+
+hpa:
+  enabled: false
+
+config:
+  PORT: "8081"
+
+secret:
+  DB_PASSWORD: ""
